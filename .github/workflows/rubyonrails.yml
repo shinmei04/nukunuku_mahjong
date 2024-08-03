@@ -17,14 +17,14 @@ jobs:
       run:
         working-directory: ./railsapp
     services:
-      postgres:
-        image: postgres:11-alpine
-        ports:
-          - "5432:5432"
+      mysql:
+        image: mysql:8.0
         env:
-          POSTGRES_DB: rails_test
-          POSTGRES_USER: rails
-          POSTGRES_PASSWORD: password
+          MYSQL_ROOT_PASSWORD: 1234
+          MYSQL_ROOT_HOST: '%'
+        ports:
+          - 3306:3306
+        options: --health-cmd "mysqladmin ping -h 127.0.0.1" --health-interval 20s --health-timeout 10s --health-retries 10
     env:
       RAILS_ENV: test
       DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
