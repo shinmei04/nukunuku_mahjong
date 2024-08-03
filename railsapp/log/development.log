@@ -839,3 +839,5 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 23ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 4916)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
