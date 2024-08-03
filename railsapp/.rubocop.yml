@@ -1,0 +1,8 @@
+# クラスにコメントを残さない
+Documentation:
+  Enabled: false # falseにすることでcheckを無効化
+
+# メソッドの行数をチェック
+MethodLength:
+  CountComments: false  # count full line comments?
+  Max: 15
