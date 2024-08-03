@@ -1,0 +1,28 @@
+# 全体に適応する項目を定義します。ここで Exclude に設定したファイルは、チェック対象外になります。
+AllCops:
+  TargetRubyVersion: 3.1
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/**/*'
+    - 'lib/tasks/**/*'
+    - "db/schema.rb"
+    - 'bin/*'
+    - 'test/*'
+    - 'node_modules/**/*'
+    - 'config/initializers/**/*'
+    - 'public/**/*'
+    - 'storage/**/*'
+    - 'log/**/*'
+    - 'tmp/**/*'
+    - 'terraform/**/*'
+    - 'openapi/**/*'
+  NewCops: enable # rubocop のバージョンをアップグレードしたときに新しいCopが自動的に有効になります。
+
+# クラスにコメントを残さない
+Documentation:
+  Enabled: false # falseにすることでcheckを無効化
+
+# メソッドの行数をチェック
+MethodLength:
+  CountComments: false  # count full line comments?
+  Max: 15
