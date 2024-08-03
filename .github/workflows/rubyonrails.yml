@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: railsapp
+        working-directory: ./railsapp
     services:
       postgres:
         image: postgres:11-alpine
@@ -47,7 +47,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: railsapp
+        working-directory: ./railsapp
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
