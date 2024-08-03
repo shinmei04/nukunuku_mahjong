@@ -27,7 +27,7 @@ jobs:
         options: --health-cmd "mysqladmin ping -h 127.0.0.1" --health-interval 20s --health-timeout 10s --health-retries 10
     env:
       RAILS_ENV: test
-      DATABASE_URL: "mysql2://root:password@127.0.0.1:3306/rails_test"
+      DATABASE_URL: "mysql2://root:password@127.0.0.1:3306/railsapp_test"
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
