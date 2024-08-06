@@ -6,9 +6,9 @@ class CreateSenders < ActiveRecord::Migration[7.1]
       t.string :prefecture, :null => false
       t.string :city, :null => false
       t.string :address, :null => false
-      t.string :building
-      t.string :company_name
-      t.string :department_name
+      t.string :building, :null => false
+      t.string :company_name, :null => false
+      t.string :department_name, :null => false
       t.string :last_name, :null => false
       t.string :first_name, :null => false 
 
