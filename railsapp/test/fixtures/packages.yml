@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_name: MyString
+  handling: MyString
+  shipping_date: 2024-08-07
+  desired_delivery_date: 2024-08-07
+  desired_delivery_time: MyString
+  number_of_items: 1
+
+two:
+  item_name: MyString
+  handling: MyString
+  shipping_date: 2024-08-07
+  desired_delivery_date: 2024-08-07
+  desired_delivery_time: MyString
+  number_of_items: 1
