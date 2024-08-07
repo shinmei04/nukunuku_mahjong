@@ -1,0 +1,125 @@
+<h1>New Order</h1>
+
+<%= form_with(model: @order, local: true) do |form| %>
+  <h2>お届け先情報</h2>
+  <%= form.fields_for :destination do |destination_form| %>
+    <div>
+      <%= destination_form.label :postal_code, '郵便番号' %>
+      <%= destination_form.text_field :postal_code %>
+    </div>
+    <div>
+      <%= destination_form.label :phone_number, '電話番号' %>
+      <%= destination_form.text_field :phone_number %>
+    </div>
+    <div>
+      <%= destination_form.label :prefecture, '都道府県' %>
+      <%= destination_form.text_field :prefecture %>
+    </div>
+    <div>
+      <%= destination_form.label :city, '市区郡長村' %>
+      <%= destination_form.text_field :city %>
+    </div>
+    <div>
+      <%= destination_form.label :address, '番地' %>
+      <%= destination_form.text_field :address %>
+    </div>
+    <div>
+      <%= destination_form.label :building, '建物名・部屋番号' %>
+      <%= destination_form.text_field :building %>
+    </div>
+    <div>
+      <%= destination_form.label :company_name, '会社名' %>
+      <%= destination_form.text_field :company_name %>
+    </div>
+    <div>
+      <%= destination_form.label :department_name, '部署名' %>
+      <%= destination_form.text_field :department_name %>
+    </div>
+    <div>
+      <%= destination_form.label :last_name, '姓' %>
+      <%= destination_form.text_field :last_name %>
+    </div>
+    <div>
+      <%= destination_form.label :first_name, '名' %>
+      <%= destination_form.text_field :first_name %>
+    </div>
+  <% end %>
+
+  <h2>ご依頼主情報</h2>
+  <%= form.fields_for :sender do |sender_form| %>
+    <div>
+      <%= sender_form.label :postal_code, '郵便番号' %>
+      <%= sender_form.text_field :postal_code %>
+    </div>
+    <div>
+      <%= sender_form.label :phone_number, '電話番号' %>
+      <%= sender_form.text_field :phone_number %>
+    </div>
+    <div>
+      <%= sender_form.label :prefecture, '都道府県' %>
+      <%= sender_form.text_field :prefecture %>
+    </div>
+    <div>
+      <%= sender_form.label :city, '市区郡長村' %>
+      <%= sender_form.text_field :city %>
+    </div>
+    <div>
+      <%= sender_form.label :address, '番地' %>
+      <%= sender_form.text_field :address %>
+    </div>
+    <div>
+      <%= sender_form.label :building, '建物名・部屋番号' %>
+      <%= sender_form.text_field :building %>
+    </div>
+    <div>
+      <%= sender_form.label :company_name, '会社名' %>
+      <%= sender_form.text_field :company_name %>
+    </div>
+    <div>
+      <%= sender_form.label :department_name, '部署名' %>
+      <%= sender_form.text_field :department_name %>
+    </div>
+    <div>
+      <%= sender_form.label :last_name, '姓' %>
+      <%= sender_form.text_field :last_name %>
+    </div>
+    <div>
+      <%= sender_form.label :first_name, '名' %>
+      <%= sender_form.text_field :first_name %>
+    </div>
+  <% end %>
+
+  <h2>配送品情報</h2>
+  <%= form.fields_for :shipment do |shipment_form| %>
+    <div>
+      <%= shipment_form.label :item_name, '品名' %>
+      <%= shipment_form.text_field :item_name %>
+    </div>
+    <div>
+      <%= shipment_form.label :handling, '荷扱い' %>
+      <%= shipment_form.text_field :handling %>
+    </div>
+    <div>
+      <%= shipment_form.label :shipping_date, '発送予定日' %>
+      <%= shipment_form.date_field :shipping_date %>
+    </div>
+    <div>
+      <%= shipment_form.label :desired_delivery_date, 'お届け希望日' %>
+      <%= shipment_form.date_field :desired_delivery_date %>
+    </div>
+    <div>
+      <%= shipment_form.label :desired_delivery_time, 'お届け希望時間帯' %>
+      <%= shipment_form.text_field :desired_delivery_time %>
+    </div>
+    <div>
+      <%= shipment_form.label :number_of_items, '発送個数' %>
+      <%= shipment_form.number_field :number_of_items %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit 'Create Order' %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', orders_path %>

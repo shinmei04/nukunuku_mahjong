@@ -1,0 +1,26 @@
+<h1>Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Destination</th>
+      <th>Sender</th>
+      <th>Shipment</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= order.destination.last_name %> <%= order.destination.first_name %></td>
+        <td><%= order.sender.last_name %> <%= order.sender.first_name %></td>
+        <td><%= order.shipment.item_name %></td>
+        <td><%= link_to 'Show', order %> | <%= link_to 'Edit', edit_order_path(order) %> | <%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Order', new_order_path %>

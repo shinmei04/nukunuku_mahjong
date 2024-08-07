@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_06_153805) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_06_160013) do
   create_table "destinations", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "postal_code", limit: 8, null: false
     t.string "phone_number", limit: 13, null: false
@@ -26,6 +26,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_06_153805) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["sender_id"], name: "index_destinations_on_sender_id"
+  end
+
+  create_table "orders", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "sender_id", null: false
+    t.bigint "destination_id", null: false
+    t.bigint "package_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["destination_id"], name: "index_orders_on_destination_id"
+    t.index ["package_id"], name: "index_orders_on_package_id"
+    t.index ["sender_id"], name: "index_orders_on_sender_id"
   end
 
   create_table "packages", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -55,4 +66,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_06_153805) do
   end
 
   add_foreign_key "destinations", "senders"
+  add_foreign_key "orders", "destinations"
+  add_foreign_key "orders", "packages"
+  add_foreign_key "orders", "senders"
 end
