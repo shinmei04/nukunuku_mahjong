@@ -2,7 +2,7 @@
 
 <%= form_with(model: @order, local: true) do |form| %>
   <h2>お届け先情報</h2>
-  <%= form.fields_for :destination do |destination_form| %>
+  <%= form.fields_for :destinations do |destination_form| %>
     <div>
       <%= destination_form.label :postal_code, '郵便番号' %>
       <%= destination_form.text_field :postal_code %>
@@ -46,7 +46,7 @@
   <% end %>
 
   <h2>ご依頼主情報</h2>
-  <%= form.fields_for :sender do |sender_form| %>
+  <%= form.fields_for :senders do |sender_form| %>
     <div>
       <%= sender_form.label :postal_code, '郵便番号' %>
       <%= sender_form.text_field :postal_code %>
@@ -90,30 +90,30 @@
   <% end %>
 
   <h2>配送品情報</h2>
-  <%= form.fields_for :shipment do |shipment_form| %>
+  <%= form.fields_for :packages do |package_form| %>
     <div>
-      <%= shipment_form.label :item_name, '品名' %>
-      <%= shipment_form.text_field :item_name %>
+      <%= package_form.label :item_name, '品名' %>
+      <%= package_form.text_field :item_name %>
     </div>
     <div>
-      <%= shipment_form.label :handling, '荷扱い' %>
-      <%= shipment_form.text_field :handling %>
+      <%= package_form.label :handling, '荷扱い' %>
+      <%= package_form.text_field :handling %>
     </div>
     <div>
-      <%= shipment_form.label :shipping_date, '発送予定日' %>
-      <%= shipment_form.date_field :shipping_date %>
+      <%= package_form.label :shipping_date, '発送予定日' %>
+      <%= package_form.date_field :shipping_date %>
     </div>
     <div>
-      <%= shipment_form.label :desired_delivery_date, 'お届け希望日' %>
-      <%= shipment_form.date_field :desired_delivery_date %>
+      <%= package_form.label :desired_delivery_date, 'お届け希望日' %>
+      <%= package_form.date_field :desired_delivery_date %>
     </div>
     <div>
-      <%= shipment_form.label :desired_delivery_time, 'お届け希望時間帯' %>
-      <%= shipment_form.text_field :desired_delivery_time %>
+      <%= package_form.label :desired_delivery_time, 'お届け希望時間帯' %>
+      <%= package_form.text_field :desired_delivery_time %>
     </div>
     <div>
-      <%= shipment_form.label :number_of_items, '発送個数' %>
-      <%= shipment_form.number_field :number_of_items %>
+      <%= package_form.label :number_of_items, '発送個数' %>
+      <%= package_form.number_field :number_of_items %>
     </div>
   <% end %>
 
@@ -123,3 +123,4 @@
 <% end %>
 
 <%= link_to 'Back', orders_path %>
+
